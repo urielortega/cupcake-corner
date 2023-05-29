@@ -7,6 +7,15 @@
 
 import SwiftUI
 
+extension String {
+    func isPureWhitespace() -> Bool {
+        if self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            return true
+        }
+        return false
+    }
+}
+
 class Order: ObservableObject, Codable {
     enum CodingKeys: CodingKey {  // Properties we want to save.
     case type, quantity, extraFrosting, addSprinkles, name, streetAddress, city, zip
@@ -34,7 +43,7 @@ class Order: ObservableObject, Codable {
     @Published var zip = ""
     
     var hasValidAddress: Bool {
-        if name.isEmpty || streetAddress.isEmpty || city.isEmpty || zip.isEmpty {
+        if name.isEmpty || name.isPureWhitespace() || streetAddress.isEmpty || streetAddress.isPureWhitespace() || city.isEmpty || city.isPureWhitespace() || zip.isEmpty || zip.isPureWhitespace() {
             return false
         }
         
