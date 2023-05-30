@@ -59,8 +59,7 @@ struct CheckoutView: View {
         
         do {
             let (data, _) = try await URLSession.shared.upload(for: request, from: encoded)
-            
-            // Handle the result:
+
             let decodedOrder = try JSONDecoder().decode(Order.self, from: data)
             
             alertTitle = "Thank you!"

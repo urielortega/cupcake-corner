@@ -14,6 +14,7 @@
 		A47CF7132A2291CF00F9861C /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CF7122A2291CF00F9861C /* Order.swift */; };
 		A47CF7152A22949200F9861C /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CF7142A22949200F9861C /* AddressView.swift */; };
 		A47CF7172A2299FB00F9861C /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CF7162A2299FB00F9861C /* CheckoutView.swift */; };
+		A4EB57042A25841D00D25BAF /* String-EmptyChecking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EB57032A25841D00D25BAF /* String-EmptyChecking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		A47CF7122A2291CF00F9861C /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		A47CF7142A22949200F9861C /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 		A47CF7162A2299FB00F9861C /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		A4EB57032A25841D00D25BAF /* String-EmptyChecking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String-EmptyChecking.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				A47CF7142A22949200F9861C /* AddressView.swift */,
 				A47CF7162A2299FB00F9861C /* CheckoutView.swift */,
 				A47CF7122A2291CF00F9861C /* Order.swift */,
+				A4EB57032A25841D00D25BAF /* String-EmptyChecking.swift */,
 				A46D70ED2A211228001FE666 /* Assets.xcassets */,
 				A46D70EF2A211228001FE666 /* Preview Content */,
 			);
@@ -150,6 +153,7 @@
 				A47CF7152A22949200F9861C /* AddressView.swift in Sources */,
 				A47CF7172A2299FB00F9861C /* CheckoutView.swift in Sources */,
 				A46D70EC2A211226001FE666 /* ContentView.swift in Sources */,
+				A4EB57042A25841D00D25BAF /* String-EmptyChecking.swift in Sources */,
 				A46D70EA2A211226001FE666 /* CupcakeCornerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
