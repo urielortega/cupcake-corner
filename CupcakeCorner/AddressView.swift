@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct AddressView: View {
-    @ObservedObject var order: Order // Using the same order, already created in ContentView.
+    @ObservedObject var order: SharedOrder // Using the same order, already created in ContentView.
     
     var body: some View {
         Form {
             Section {
-                TextField("Name", text: $order.name)
-                TextField("Street address", text: $order.streetAddress)
-                TextField("City", text: $order.city)
-                TextField("Zip", text: $order.zip)
+                TextField("Name", text: $order.data.name)
+                TextField("Street address", text: $order.data.streetAddress)
+                TextField("City", text: $order.data.city)
+                TextField("Zip", text: $order.data.zip)
             }
             
             Section {
@@ -26,7 +26,7 @@ struct AddressView: View {
                     Text("Check out")
                 }
             }
-            .disabled(!order.hasValidAddress)
+            .disabled(!order.data.hasValidAddress)
         }
         .navigationTitle("Delivery details")
         .navigationBarTitleDisplayMode(.inline)
@@ -36,7 +36,7 @@ struct AddressView: View {
 struct AddressView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            AddressView(order: Order())
+            AddressView(order: SharedOrder())
         }
     }
 }
