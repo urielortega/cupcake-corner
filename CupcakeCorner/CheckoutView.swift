@@ -26,7 +26,7 @@ struct CheckoutView: View {
                 }
                 .frame(height: 233) // To save the space for the image and the progress indicator.
                 
-                Text("Your total is \(order.data.cost, format: .currency(code: "USD"))")
+                Text("Your total is \(order.cost, format: .currency(code: "USD"))")
                     .font(.title)
                 
                 Button("Place order") {

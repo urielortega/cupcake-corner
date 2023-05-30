@@ -7,9 +7,23 @@
 
 import SwiftUI
 
+@dynamicMemberLookup
 class SharedOrder: ObservableObject {
     static let types = ["Vainilla", "Strawberry", "Chocolate", "Rainbow"]
     @Published var data = Order()
+    
+    subscript<T>(dynamicMember keyPath: KeyPath<Order, T>) -> T { // Handle any dynamic property, as long as it is one that exists on Order.
+        data[keyPath: keyPath]                        // The T (generic type) makes it possible to use, for example, order.name (a String), order.addSprinkles (a Bool), etc.
+    }
+    
+    subscript<T>(dynamicMember keyPath: WritableKeyPath<Order, T>) -> T {
+        get {
+            data[keyPath: keyPath]
+        }
+        set {
+            data[keyPath: keyPath] = newValue
+        }
+    }
 }
 
 struct Order: Codable {
