@@ -10,8 +10,9 @@ import SwiftUI
 struct CheckoutView: View {
     @ObservedObject var order: Order // Using the same order, already created in ContentView.
     
-    @State private var confirmationMessage = ""
-    @State private var showingConfirmation = false
+    @State private var alertTitle = ""
+    @State private var alertMessage = ""
+    @State private var showingAlert = false
 
     var body: some View {
         ScrollView {
@@ -38,10 +39,10 @@ struct CheckoutView: View {
         }
         .navigationTitle("CheckOut")
         .navigationBarTitleDisplayMode(.inline)
-        .alert("Thank you!", isPresented: $showingConfirmation) {
+        .alert(alertTitle, isPresented: $showingAlert) {
             Button("Ok") {  }
         } message: {
-            Text(confirmationMessage)
+            Text(alertMessage)
         }
     }
     
@@ -61,10 +62,16 @@ struct CheckoutView: View {
             
             // Handle the result:
             let decodedOrder = try JSONDecoder().decode(Order.self, from: data)
-            confirmationMessage = "Your order for \(decodedOrder.quantity)x \(Order.types[decodedOrder.type].lowercased()) cupcakes is on its way!"
-            showingConfirmation = true
+            
+            alertTitle = "Thank you!"
+            alertMessage = "Your order for \(decodedOrder.quantity)x \(Order.types[decodedOrder.type].lowercased()) cupcakes is on its way!"
+            showingAlert = true
         } catch {
             print("Checkout failed")
+            
+            alertTitle = "Something went wrong"
+            alertMessage = "Please check your connection and try again."
+            showingAlert = true
         }
     }
 }
