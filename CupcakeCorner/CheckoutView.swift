@@ -25,6 +25,7 @@ struct CheckoutView: View {
                     ProgressView()
                 }
                 .frame(height: 233) // To save the space for the image and the progress indicator.
+                .accessibilityHidden(true) // To make the view invisible to the accessibility system.
                 
                 Text("Your total is \(order.cost, format: .currency(code: "USD"))")
                     .font(.title)
